@@ -61,10 +61,7 @@ def save_markdown(items: List[Dict[str, Any]], out_dir: str,
             lines.append(f"- Abs：{it['html_url']}")
         if it.get("pdf_url"):
             lines.append(f"- PDF：{it['pdf_url']}")
-        if it.get("code_urls"):
-            lines.append(f"- Code：{', '.join(it['code_urls'])}")
-        if it.get("project_urls"):
-            lines.append(f"- Project：{', '.join(it['project_urls'])}")
+        # Code和Project链接已移除，因为高能物理论文通常不包含代码
 
         sid = it.get("id") or ""
         trans = translations.get(sid) if translations else None

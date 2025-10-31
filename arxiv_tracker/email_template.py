@@ -30,12 +30,7 @@ def _join_links(it: Dict[str, Any]) -> str:
         parts.append(f'<a href="{_esc(it["html_url"])}">Abs</a>')
     if it.get("pdf_url"):
         parts.append(f'<a href="{_esc(it["pdf_url"])}">PDF</a>')
-    if it.get("code_urls"):
-        a = [f'<a href="{_esc(u)}">Code{i+1}</a>' for i,u in enumerate(it["code_urls"][:3])]
-        parts.append(" · ".join(a))
-    if it.get("project_urls"):
-        a = [f'<a href="{_esc(u)}">Project{i+1}</a>' for i,u in enumerate(it["project_urls"][:2])]
-        parts.append(" · ".join(a))
+    # Code和Project链接已移除，因为高能物理论文通常不包含代码
     return " · ".join(parts)
 
 CSS = """

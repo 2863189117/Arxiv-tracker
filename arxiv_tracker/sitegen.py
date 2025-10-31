@@ -120,10 +120,7 @@ def _join_links(it: Dict[str, Any]) -> str:
     parts = []
     if it.get("html_url"): parts.append(f'<a href="{_esc(it["html_url"])}">Abs</a>')
     if it.get("pdf_url"):  parts.append(f'<a href="{_esc(it["pdf_url"])}">PDF</a>')
-    if it.get("code_urls"):
-        for i,u in enumerate(it["code_urls"][:3]): parts.append(f'<a href="{_esc(u)}">Code{i+1}</a>')
-    if it.get("project_urls"):
-        for i,u in enumerate(it["project_urls"][:2]): parts.append(f'<a href="{_esc(u)}">Project{i+1}</a>')
+    # Code和Project链接已移除，因为高能物理论文通常不包含代码
     return " · ".join(parts)
 
 def _card(it: Dict[str, Any],

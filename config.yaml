@@ -63,7 +63,7 @@ llm:
     and key experimental findings. Be objective and specific; avoid marketing language.
     Preserve any provided links, but do NOT repeat them in the paragraph.
   system_prompt_zh: |
-    你是资深论文阅读助手。基于给定的论文元信息与摘要，用中文写「一段」简洁的总结，
+    你是资深论文阅读助手。基于给定的论文元信息与摘要，用中文写「一段」总结，
     包含研究动机、核心方法与关键实验结果。保持客观、术语准确；避免营销式表述。
     如有链接请保留，但不要在总结里重复链接。
 
@@ -88,7 +88,7 @@ freshness:
   fallback_when_empty: false # 当今天无新增时，是否回退展示最近的Top若干（建议false）
 
 scrape:
-  html: true               # 先用 HTML 页抓链接
-  pdf_if_missing: true     # 若没抓到 code，再去扫 PDF 头部兜底
-  pdf_first_page: false    # （可保留为 false；若你想“不管有没有都扫 PDF”，设 true）
-  timeout: 10
+  html: false              # 取消链接抓取
+  pdf_if_missing: false    
+  pdf_first_page: false   
+  timeout: 1
